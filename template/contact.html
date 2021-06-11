@@ -1,0 +1,45 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact{% endblock title %}
+
+{% block body %}
+
+<div class="container">
+    <img src="./static/images/contact Us.jpg" height="600px" width="780px"
+        style="position:absolute;right:0px;z-index:121;" alt="...">
+</div>
+<div class="helpline-container"style="position:absolute;right:10px;top:60px;z-index:243;font-size:20px">
+<p>
+    Helpline:
+    <span><i class="fas fa-phone">9845131243</i></span>
+</p></div>
+<div class="temp-container" style="font-family:Verdana, Geneva, Tahoma, sans-serif">
+    <div class="container py-2" style="background:rgb(237, 245, 245);height:600px;float:left">
+        <h1 class="mx-4">Contact Us</h1>
+        <form method="post" action="/contact">
+            {% csrf_token %}
+            <div class="form-group my-4 mx-4" style="width:500px">
+                <label for="name">Name</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Enter your Name">
+            </div>
+
+            <div class="form-group my-4 mx-4" style="width:500px">
+                <label for="email">Email address</label>
+                <input type="email" class="form-control " id="email" name="email" placeholder="Enter Your Email">
+            </div>
+
+            <div class="form-group my-4 mx-4" style="width:500px">
+                <label for="phone">Phone Number</label>
+                <input type="phone" class="form-control " id="phone" name="phone" placeholder="Enter Your Phone Number">
+            </div>
+
+            <div class="form-group my-4 mx-4" style="width:500px">
+                <label for="desc">Tell us about what you want to contact us for...</label>
+                <textarea class="form-control" id="desc" rows="3" name="desc"></textarea>
+            </div>
+            <button class="btn btn-primary my-3 mx-4" type="submit">Submit</button>
+        </form>
+
+    </div>
+</div>
+{% endblock body %}
